@@ -80,7 +80,7 @@
      * Datepicker component
      */
     module.component('datepicker', {
-        templateUrl: '/ctpls/datepicker.tpl.html',
+        templateUrl: '/tpls/datepicker.tpl.html',
         controllerAs: 'vm',
         require: {
             ngModelController: 'ngModel'
