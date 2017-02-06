@@ -1,6 +1,6 @@
 <div class="datepicker">
     <input type="text" ng-value="vm.prettyDate" ng-focus="vm.onFocus()" ng-blur="onBlur()" readonly>
     <div class="calendar-widget-container">
-        <calendar on-change="vm.onCalendarChange(date)" selected-date="vm.date" />
+        <calendar on-change="vm.onCalendarChange(date)" selected-date="vm.date" min-date="vm.minDate" max-date="vm.maxDate"/>
     </div>
 </div>

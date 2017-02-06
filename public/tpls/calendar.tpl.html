@@ -12,8 +12,9 @@
     <table>
         <tbody>
             <tr ng-repeat="week in vm.month track by $index">
-                <td ng-repeat="day in week" ng-class="{hide: day.month !== vm.date.month, selected: vm.isSelected(day)}">
-                    <a href ng-click="vm.selectDate(day)">{{day.day}}</a>
+                <td ng-repeat="day in week"
+                    ng-class="{hide: day.month !== vm.date.month, selected: vm.isSelected(day), disabled: !vm.isEnabled(day)}">
+                    <a href ng-click="vm.isEnabled(day) && vm.selectDate(day)">{{day.day}}</a>
                 </td>
             </tr>
         </tbody>

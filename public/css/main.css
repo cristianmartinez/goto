@@ -4,7 +4,7 @@
 
 html,
 body {
-    height: 100%;
+    
 }
 
 body {
@@ -17,8 +17,7 @@ body {
     background: linear-gradient(to bottom, #89d2ff 0%, #2fef9f 100%);
 }
 
-#goto{
-     overflow: auto;
+#goto {
      height: 100%;
      color: #444;
 }
@@ -118,8 +117,12 @@ h1 {
     border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 
-.calendar-widget table td.hide a {
+.calendar-widget table td.hide a, .calendar-widget table td.disabled a {
     opacity: 0.3;
+}
+
+.calendar-widget table td.disabled a {
+    cursor: not-allowed;
 }
 
 .calendar-widget table td.selected a {
@@ -195,4 +198,14 @@ h1 {
     letter-spacing: 2px;
     color: white;
     text-decoration: none;
+}
+
+.help{
+    text-align: center;
+}
+
+.info{
+    text-align: center;
+    font-size: 1.2em;
+    color:#fff;
 }

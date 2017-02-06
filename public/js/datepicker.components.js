@@ -9,7 +9,9 @@
         controllerAs: 'vm',
         bindings: {
             onChange: '&',
-            selectedDate: '='
+            selectedDate: '=',
+            minDate: '=?',
+            maxDate: '=?'
         },
         controller: CalendarComponentController
     });
@@ -30,6 +32,7 @@
         vm.goToPrevMonth = goToPrevMonth;
         vm.selectDate = selectDate;
         vm.isSelected = isSelected;
+        vm.isEnabled = isEnabled;
 
         function goToNextMonth() {
             if (vm.date.month === 12) {
@@ -62,14 +65,18 @@
             vm.onChange({ date: day });
         }
 
+        function isEnabled(day) {
+            if (angular.isNumber(vm.minDate) && vm.minDate > day.time) return false;
+            if (angular.isNumber(vm.maxDate) && vm.maxDate < day.time) return false;
+
+            return day.time > Date.now()
+        }
+
         function isSelected(date) {
             if (!vm.selectedDate) {
                 return;
             }
 
-            console.log(vm.selectedDate.year === date.year
-                && vm.selectedDate.month === date.month
-                && vm.selectedDate.day === date.day);
             return vm.date.year === date.year
                 && vm.selectedDate.month === date.month
                 && vm.selectedDate.day === date.day;
@@ -82,8 +89,12 @@
     module.component('datepicker', {
         templateUrl: '/tpls/datepicker.tpl.html',
         controllerAs: 'vm',
+        bindings: {
+            minDate: '=?',
+            maxDate: '=?'
+        },
         require: {
-            ngModelController: 'ngModel'
+            ngModelController: 'ngModel',
         },
         controller: DatepickerComponentController
     });
@@ -114,11 +125,11 @@
             });
         }
 
-        function onFocus (){
+        function onFocus() {
             vm.active = true;
         }
 
-        function onBlur (){
+        function onBlur() {
             vm.active = false;
         }
 

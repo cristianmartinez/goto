@@ -13,20 +13,22 @@
 </head>
 
 <body>
-    <div ng-app="goto" id="goto">
+    <div ng-app="goto" id="goto" ng-controller="mainController as vm">
         <div class="container">
             <h1>go.to</h1>
             <p class="intro">Los datepickers son siempre visibles por estética. :)<p>
             <div class="row">
                 <div class="column datepicker-column">
                     <h3>From:</h3>
-                    <datepicker ng-model="vm.fromDate"></datepicker>
+                    <datepicker ng-model="vm.fromDate" max-date="vm.toDate.time"></datepicker>
                 </div>
                 <div class="column datepicker-column">
                     <h3>To:</h3>
-                    <datepicker ng-model="vm.toDate"></datepicker>
+                    <datepicker ng-model="vm.toDate" min-date="vm.fromDate.time"></datepicker>
                 </div>
             </div>
+            <p class="help" ng-if="!vm.fromDate || !vm.toDate">Selecciona fecha de salida y fecha de regreso</p>
+            <p class="info" ng-if="vm.fromDate && vm.toDate">Has seleccionado un viaje de {{vm.totalDays}} dias</p>
             <div class="footer"><a href="http://cristianmartinez.co">cristianmartinez.co</a></div>
         </div>
     </div>
