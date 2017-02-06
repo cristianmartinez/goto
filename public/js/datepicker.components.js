@@ -5,7 +5,7 @@
      * Calendar widget component
      */
     module.component('calendar', {
-        templateUrl: 'tpls/calendar.tpl.html',
+        templateUrl: '/tpls/calendar.tpl.html',
         controllerAs: 'vm',
         bindings: {
             onChange: '&',
@@ -80,7 +80,7 @@
      * Datepicker component
      */
     module.component('datepicker', {
-        templateUrl: 'tpls/datepicker.tpl.html',
+        templateUrl: '/ctpls/datepicker.tpl.html',
         controllerAs: 'vm',
         require: {
             ngModelController: 'ngModel'

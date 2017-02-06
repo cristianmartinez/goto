@@ -1,16 +1,18 @@
-(function (window, document){
-    /**
-     * Main application module
-     */
-    var module = angular.module('goto', ['datepicker']);
+var express = require('express');
+var app = express();
+var path = require('path');
 
-    module.controller('mainController', MainController);
+app.set('port', (process.env.PORT || 5000));
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/node_modules'));
 
-    /**
-     * Main controller constructor
-     */
-    MainController.$inject = [];
-    function MainController(){
+app.set('views', __dirname + '/pages');
+app.set('view engine', 'ejs');
 
-    }
-})(window, document);
+app.get('/', function(request, response) {
+    response.render('index');
+});
+
+app.listen(app.get('port'), function() {
+    console.log('Node app is running on port', app.get('port'));
+});
