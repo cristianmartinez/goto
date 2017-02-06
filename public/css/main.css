@@ -23,14 +23,6 @@ body {
      color: #444;
 }
 
-#goto p{
-    font-size: 1.2em;
-    letter-spacing: 1px;
-    margin-top: 80px;
-    color: white;
-    text-align: center;
-}
-
 h1 {
     color: #fff;
     text-align: center;
@@ -65,6 +57,7 @@ h1 {
 
 .datepicker-column {
     width: 50%;
+    margin-bottom: 20px;
 }
 
 .datepicker-column h3 {
@@ -96,10 +89,10 @@ h1 {
 .calendar-widget {
     z-index: 1000;
     border-radius: 2px;
-    top: 20px;
+    margin-top: 20px;
     width: 100%;
     padding: 10px;
-    position: absolute;
+    position: relative;
     background-color: rgba(255,255,255,0.2);
     border: 1px solid rgba(255,255,255,0.3);
     box-shadow: 0 5px 30px rgba(0,0,0,.1);
@@ -157,8 +150,6 @@ h1 {
     color: #fff;
     float: right;
     font-size: 1.5em;
-
-    
 }
 
 .calendar-widget .calendar-header::before, .calendar-widget .calendar-header::after {
@@ -185,4 +176,23 @@ h1 {
     .calendar-widget{
         position: initial;
     }
+}
+
+.intro{
+    letter-spacing: 2px;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+}
+
+.footer{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.footer a{
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
 }
