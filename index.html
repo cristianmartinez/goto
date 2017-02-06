@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Datepicker - Cristian Martinez</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div ng-app="goto" id="goto">
+        <div class="container">
+            <h1>go.to</h1>
+            
+            <div class="row">
+                <div class="column datepicker-column">
+                    <h3>From:</h3>
+                    <datepicker ng-model="vm.fromDate"></datepicker>
+                </div>
+                <div class="column datepicker-column">
+                    <h3>To:</h3>
+                    <datepicker ng-model="vm.toDate"></datepicker>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="datepicker.api.js"></script>
+    <script src="datepicker.components.js"></script>
+    <script src="datepicker.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

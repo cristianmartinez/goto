@@ -1,0 +1,21 @@
+<div class="calendar-widget">
+    <div class="calendar-header">
+        <div class="calendar-control">
+            <button ng-click="vm.goToPrevMonth()"><i class="fa fa-arrow-circle-left"></i></button>
+            <button ng-click="vm.goToNextMonth()"><i class="fa fa-arrow-circle-right"></i></button>
+        </div>
+        <div class="calendar-title">
+            <span>{{vm.date.month}} / {{vm.date.year}}</span>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+            <tr ng-repeat="week in vm.month track by $index">
+                <td ng-repeat="day in week" ng-class="{hide: day.month !== vm.date.month, selected: vm.isSelected(day)}">
+                    <a href ng-click="vm.selectDate(day)">{{day.day}}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

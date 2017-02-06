@@ -1,0 +1,13 @@
+{
+  "name": "datepicker",
+  "version": "1.0.0",
+  "description": "Custom datepicker on angularjs",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.1"
+  }
+}

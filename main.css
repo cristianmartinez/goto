@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Ropa Sans', sans-serif;
+    background: #89d2ff;
+    background: -moz-linear-gradient(top, #89d2ff 0%, #2fef9f 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #89d2ff 0%, #2fef9f 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #89d2ff 0%, #2fef9f 100%);
+}
+
+#goto{
+     overflow: auto;
+     height: 100%;
+     color: #444;
+}
+
+#goto p{
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    margin-top: 80px;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 80px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.container {
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 600px;
+}
+
+.row {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.row::before, .row::after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.column {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.datepicker-column {
+    width: 50%;
+}
+
+.datepicker-column h3 {
+    margin-bottom: 5px;
+}
+
+.datepicker input[type="text"] {
+    text-align: right;
+    color: white;
+    display: block;
+    letter-spacing: 3px;
+    font-size: 14px;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid rgba(255,255,255,0.6);
+    background-color:rgba(255,255,255,0.2);
+    transition: all 0.3s;
+}
+
+.datepicker input[type="text"]:focus{
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+    outline:none;
+}
+
+.calendar-widget-container {
+    position: relative;
+}
+
+.calendar-widget {
+    z-index: 1000;
+    border-radius: 2px;
+    top: 20px;
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    background-color: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 5px 30px rgba(0,0,0,.1);
+}
+
+.calendar-widget a {
+    text-decoration: none;
+    color: white;
+}
+
+.calendar-widget button {
+    color: #444;
+    border: 1px solid rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.2);
+    padding: 5px 10px;
+}
+
+.calendar-widget table {
+    width: 100%;
+}
+
+.calendar-widget table td {
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.calendar-widget table td.hide a {
+    opacity: 0.3;
+}
+
+.calendar-widget table td.selected a {
+    color: #444;
+    background-color: rgba(255,255,255,0.6);;
+    opacity: 1;
+}
+
+.calendar-widget table a{
+    padding: 5px 7px;
+    display: block;
+    text-align: center;
+}
+
+.calendar-widget table a:hover{
+    background-color: rgba(255,255,255,0.3);
+}
+
+.calendar-widget .calendar-header{
+    margin-bottom: 10px;
+}
+
+.calendar-widget .calendar-control{
+    float: left;
+}
+
+.calendar-widget .calendar-title{
+    color: #fff;
+    float: right;
+    font-size: 1.5em;
+
+    
+}
+
+.calendar-widget .calendar-header::before, .calendar-widget .calendar-header::after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.calendar-widget .calendar-control button{
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.calendar-widget .calendar-control button:hover{
+    opacity: 0.5;
+}
+
+@media only screen and (max-width: 600px) {
+    .datepicker-column {
+        float: none;
+        width: 100%;
+    }
+
+    .calendar-widget{
+        position: initial;
+    }
+}
